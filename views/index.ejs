@@ -12,7 +12,7 @@
 <body>
   <div class="Headline">
         <h1>Pokedex</h1>
-        <button><a href="/pokemon/new" class="btn btn-secondary">Add New Poke</a></button> 
+        <button><a href="/pokemon/new" class="btn btn-secondary">Add New Pokemon</a></button> 
   </div>
       <ul>
         <% for(let i=0; i < allPokemon.length; i++){ %>
@@ -23,7 +23,8 @@
               <form action="/pokemon/<%= i %>?_method=DELETE" method="POST" style="padding: 0">
                 <input type="submit" value="DELETE" />
             </form>
-            <button><a href="/pokemon/<%= i %>/edit" style="padding: 0">EDIT</a></button>   
+            <button><a href="/pokemon/<%= i %>/edit" style="padding: 0">EDIT</a></button>
+            <a href="/pokemon/<%= i %>/" style="padding: 0;">Info</a> 
           </li> 
         <% } %>
       </ul>

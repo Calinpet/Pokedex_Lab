@@ -7,6 +7,56 @@
   <title>Document</title>
 </head>
 <body>
+  <div class="headline">
+    <h2 style="color:rgb(9, 9, 9)">Pokemon New Page</h2>
+</div>
+<form action="/pokemon" method="POST">
+            <label for="name">Name</label>
+            <input class="nName" type="text" name="name" placeholder="pokemon name">
+            <label for="type">Type</label>
+            <input class="nType" type="text" name="type" placeholder="pokemon type">
+        </div>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th> Stats</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="text" placeholder="enter hp" name="hp"></td>
+            </tr>
+
+            <tr>
+                <td><input type="text" placeholder="enter attack" name="attack"></td>
+            </tr>
+
+            <tr>
+                <td><input type="text" placeholder="enter defense" name="defense"></td>
+            </tr>
+
+            <tr>
+                <td><input type="text" placeholder="enter spattack" name="spattack"></td>
+            </tr>
+
+            <tr>
+                <td><input type="text" placeholder="enter spdefense" name="spdefense"></td>
+            </tr>
+
+            <tr>
+                <td><input type="text" placeholder="enter speed" name="speed"></td>
+            </tr>
+
+            <tr>
+              <td><input type="text" placeholder="add image" name="img"></td>
+          </tr>
+
+        </tbody>
+    </table>
+    <input style="background-color:rgb(65, 196, 189)" type="submit" value="Add">
+    <a href="/pokemon" class="button" style="color:rgb(65, 196, 189)">Back</a>
+</form>
   
 </body>
 </html>

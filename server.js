@@ -11,7 +11,6 @@ const port = 3000;
 
 /// static
 app.use(express.static('public'))
-
 // DEFINE OUR ROUTS
 
 // INDEX
@@ -46,14 +45,15 @@ app.put("/pokemon/:indexOfPokemonArray", (req,res)=>{
 
 //CREATE
 app.post("/pokemon", (req, res)=>{
-  res.redirect()
+  pokemon.push(req.body)
+  res.redirect("/pokemon")
 });
 
 //EDIT
 
 //SHOW
-app.get('/:id', (req, res) => {
-  res.render('show.ejs', { data: pokemon[req.params.id] });
+app.get('/pokemon/:id', (req, res) => {
+  res.render('show.ejs', { allPokemon: pokemon[req.params.id] });
   });
 
 // TELL OUR APP TO LISTEN ON PORT...
