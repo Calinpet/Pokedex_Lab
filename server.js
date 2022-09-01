@@ -9,11 +9,16 @@ app.use(express.urlencoded({ extended: false }))
 app.use(methodOverride("_method"))
 const port = 3000;
 
+/// static
+app.use(express.static('public'))
+
 // DEFINE OUR ROUTS
 
 // INDEX
 app.get('/pokemon/', (req, res) => {
-  res.render('index.ejs', { data: Pokemon });
+  res.render('index.ejs', { 
+    allPokemon: pokemon 
+  });
   });
 
 //NEW
@@ -23,19 +28,32 @@ app.get('/pokemon/new', (req, res) => {
 
 //DELETE
 app.delete("/pokemon/:indexOfPokemonArray", (req, res)=>{
+  pokemon.splice(req.params.indexOfPokemonArray, )
+  res.redirect("/pokemon")
+});
 
-})
+
 //UPDATE
+app.put("/pokemon/:indexOfPokemonArray", (req,res)=>{
+  if(req.body.readyToBatle === "on"){
+    req.body.readyToBatle = true
+  } else {
+    req.body.readyToBatle = false
+  }
+  pokemon[req.params.indexOfPokemonArray] = req.body
+  res.redirect("/pokemon")
+});
 
 //CREATE
 app.post("/pokemon", (req, res)=>{
   res.redirect()
-})
+});
+
 //EDIT
 
 //SHOW
 app.get('/:id', (req, res) => {
-  res.render('show.ejs', { data: Pokemon[req.params.id] });
+  res.render('show.ejs', { data: pokemon[req.params.id] });
   });
 
 // TELL OUR APP TO LISTEN ON PORT...
